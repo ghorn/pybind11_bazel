@@ -42,7 +42,7 @@ def pybind_extension(
         features = features + PYBIND_FEATURES,
         linkopts = linkopts + select({
             "@pybind11//:osx": [],
-            "//conditions:default": ["-Wl,-Bsymbolic"],
+            "//conditions:default": [],#["-Wl,-Bsymbolic"],
         }),
         linkshared = 1,
         tags = tags,
